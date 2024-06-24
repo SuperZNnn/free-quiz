@@ -1,0 +1,684 @@
+/*Importar Fontes*/
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
+
+/*Tela de Loading*/
+.loadingPage{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+.loader {
+    border: 1vh solid var(--almostFifthColor);
+    border-top: 1vh solid var(--almostPrimaryColor);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: loaderSpin 1s linear infinite;
+    margin: 1vh 0;
+}
+@keyframes loaderSpin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loadingPage p{
+    font-family: 'Salsa', sans-serif;
+    font-size: 3vh;
+    color: #fff;
+    text-shadow: 5px 5px 5px rgba(0,0,0,.6);
+}
+
+.loadingPage h1{
+    text-align: center;
+    font-family: 'Kanit', sans-serif;
+    color: #a0a0a0;
+    font-size: 7vh;
+    text-shadow: 5px 5px 5px rgba(0,0,0,.6);
+}
+/*fim Tela de Loading*/
+
+/*Single Player Game*/
+.singlePlayerGameContainer, .singlePlayerGameContainer1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+}
+.singlePlayerGameContainer h1, .singlePlayerGameContainer1 h1{
+    font-family: 'Salsa', sans-serif;
+    color: #fff;
+    text-shadow: 2px 2px 5px rgba(0,0,0,1);
+    font-size: 5vh;
+    text-align: center;
+}
+.singlePlayerGameContainer h1.runAnimation{
+    animation: startShowText 1s ease-in-out forwards;
+}
+@keyframes startShowText {
+    0%{
+        opacity: 0;
+        transform: scale(50%);
+    }
+    100%{
+        opacity: 1;
+        transform: scale(100%);
+    }
+}
+
+/*--numLoader*/
+.numLoader{
+    width: 10vh;
+    height: 10vh;
+    background-color: var(--secondColor);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+.numLoader1{
+    width: 7vh;
+    height: 7vh;
+    border-radius: 50%;
+    background-color: var(--thirdColor);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1vh solid var(--almostPrimaryColor);
+    border-bottom: 1vh solid var(--primaryColor);
+    border-top: 1vh solid var(--primaryColor);
+    animation: loaderSpin 1s ease-in-out infinite;
+}
+.numLoader1 .content{
+    animation: contentLoaderSpin 1s ease-in-out infinite;
+    color: #fff;
+    text-shadow: 2px 2px 2px rgba(0,0,0,.4);
+    font-family: 'Poppins', sans-serif;
+    font-weight: bolder;
+    font-size: 5vh;
+
+}
+@keyframes contentLoaderSpin {
+    100% {
+        transform: scale(100%) rotate(0deg);
+    }
+    0% {
+        transform: scale(50%) rotate(720deg);
+    }
+}
+/*fim --numLoader*/
+
+/*--Questions*/
+.questionContainer{
+    width: 45vh;
+    min-height: 20vh;
+    background-color: var(--fourthColor);
+    border: .4vh solid var(--fifthColor);
+    padding: 1vh;
+    border-radius: 1vh;
+    box-shadow: 5px 5px 5px rgba(0,0,0,.6);
+}
+
+.respostasContainer{
+    margin-top: 1vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1vh;
+    width: 45vh;
+    align-content: stretch;
+}
+.respostasContainer button{
+    border: none;
+    background-color: transparent;
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+}
+.questionContainer p{
+    font-family: 'Poppins', sans-serif;
+    font-size: 2vh;
+    text-align: justify;
+    color: #dadada;
+    text-shadow: 5px 5px 5px rgba(0,0,0,.6);
+}
+.resposta{
+    width: 20vh;
+    border-radius: 1vh;
+    border: .4vh solid #fff;
+    box-shadow: 5px 5px 5px rgba(0,0,0,.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    cursor: pointer;
+}
+.resposta svg{
+    position: absolute;
+    width: 10vh;
+    height: 10vh;
+    fill: #444444;
+    color: #444444;
+    stroke: #fff;
+    transition: .2s;
+}
+.resposta p{
+    position: relative;
+    top: 7.5vh;
+    font-family: 'Kanit', sans-serif;
+    font-size: 2vh;
+}
+.resposta:hover svg{
+    fill: #fff;
+}
+
+.resposta.vermelho{
+    height: 25vh;
+    background-color: rgb(255, 66, 66);
+    stroke-width: .4vh;
+}
+.resposta.vermelho.strech{
+    height: 50vh;
+    background-color: rgb(255, 66, 66);
+    stroke-width: .4vh;
+}
+.resposta.azul{
+    height: 25vh;
+    background-color: rgb(66, 66, 255);
+    stroke-width: 3vh;
+}
+.resposta.azul.strech{
+    height: 50vh;
+    background-color: rgb(66, 66, 255);
+    stroke-width: 3vh;
+}
+.resposta.verde{
+    height: 25vh;
+    background-color: rgb(66,255,66);
+    stroke-width: .4vh;
+}
+.resposta.amarelo{
+    height: 25vh;
+    background-color: rgb(255,255,66);
+    stroke-width: .1vh;
+}
+/*fim --Questions*/
+
+/*--Questions Data*/
+.questionData{
+    width: 45vh;
+    height: 1vh;
+    z-index: 1;
+    position: absolute;
+    top: 4vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.questionData1{
+    width: 45vh;
+    height: 1vh;
+    z-index: 1;
+    position: relative;
+    top: -1vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.questionData .questionTL, .questionData1 .questionTL{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 5vh;
+    height: 5vh;
+    border-radius: 50%;
+    background-color: var(--thirdColor);
+}
+.questionTL .rotation{
+    animation: loaderSpin 1s ease-in-out infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    height: 70%;
+    border-radius: 50%;
+    border: .4vh solid var(--almostPrimaryColor);
+    border-top: .4vh solid var(--primaryColor);
+    border-bottom: .4vh solid var(--primaryColor);
+    background-color: var(--thirdColor);
+}
+.questionTL .rotation .content{
+    animation: contentLoaderStop 1s ease-in-out infinite;
+    color: #fff;
+    text-shadow: 2px 2px 2px rgba(0,0,0,.4);
+    font-family: 'Poppins', sans-serif;
+    font-weight: bolder;
+    font-size: 2.5vh;
+}
+@keyframes contentLoaderStop {
+    100% {
+        transform: rotate(0deg);
+    }
+    0% {
+        transform: rotate(360deg);
+    }
+}
+.questionNumber{
+    background-color: var(--thirdColor);
+    width: 9vh;
+    height: 5vh;
+    border-radius: 1vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.questionNumber .content{
+    border-radius: .75vh;
+    background-color: var(--thirdColor);
+    width: 80%;
+    height: 70%;
+    border: .4vh solid var(--almostPrimaryColor);
+    border-left: .4vh solid var(--primaryColor);
+    border-bottom: .4vh solid var(--primaryColor);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    color: #dadada;
+    text-shadow: 2px 2px 2px rgba(0,0,0,1);
+    font-size: 2.5vh;
+}
+/*fim --Questions Data*/
+
+/*--Answer Status*/
+.answerStatus{
+    border: .4vh solid #fff;
+    border-radius: 50%;
+    width: 7vh;
+    height: 7vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 5vh;
+    color: #fff;
+    box-shadow: 5px 5px 5px rgba(0,0,0,.6);
+}
+.answerStatus.wrong{
+    font-family: 'Salsa', sans-serif;
+    background-color: rgb(255,66,66);
+}
+.answerStatus.right,.answerStatus.finish{
+    font-family: "Caveat", cursive;
+    background-color: rgb(66,255,66);
+    font-weight: bolder;
+}
+.answerStatus.right span{
+    transform: translate(-25%);
+}
+
+.answerStatusP{
+    text-align: center;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5vh;
+    text-shadow: 2px 2px 0px rgba(0,0,0,1);
+}
+/*fim --Answer Status*/
+
+/*fim Single Player Game*/
+
+/*Multi Player Game*/
+.waitScreen{
+    position: relative;
+    top: 50%;
+    transform: translate(0,-50%);
+}
+.waitScreen h1{
+    font-family: 'Salsa', sans-serif;
+    text-align: center;
+    font-size: 5vh;
+    text-shadow: 2px 2px 0px rgba(0,0,0,1);
+    color: var(--almostPrimaryColor);
+}
+
+.playersContainer{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1vh;
+}
+.playerInfo{
+    width: 40vh;
+    min-height: 10vh;
+    background-color: #cccccc;
+    border: .4vh solid #fff;
+    border-radius: 1vh;
+    display: flex;
+    align-items: center;
+}
+.playerInfo img{
+    margin-left: .5vh;
+    border-radius: 50%;
+    width: 9vh;
+    border: .4vh solid #fff;
+    border-radius: 50%;
+}
+.playerInfo .textInfo{
+    width: calc(100% - 9vh);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.playerInfo .textInfo h1{
+    text-align: center;
+    font-family: 'Kanit', sans-serif;
+    font-size: 4.5vh;
+}
+.playerInfo .textInfo p{
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 2vh;
+}
+
+.continueButton,.clearButton{
+    position: absolute;
+    bottom: 1vh;
+    right: 1vh;
+    width: 30vh;
+    height: 10vh;
+    border: .4vh solid #444444;
+    border-radius: 1vh;
+    font-family: 'Kanit', sans-serif;
+    transition: .2s;
+    cursor: pointer;
+}
+.continueButton{
+    background-color: #6eff6e;
+    font-size: 5vh;
+}
+.clearButton{
+    font-size: 3.5vh;
+    background-color: #f3ff84;
+}
+.clearButton:hover{
+    background-color: #e5ff00;
+}
+.clearButton:active{
+    color: #e5ff00;
+}
+.continueButton:hover{
+    background-color: #0ca60c;
+}
+.continueButton:active{
+    color: #0ca60c;
+}
+
+.MultiplayerGameAlternativas{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1vh;
+    flex-wrap: wrap;
+}
+.question{
+    width: calc(48% - 3.4vh);
+    height: calc(48%);
+    border: .4vh solid #fff;
+    border-radius: 1vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+}
+.question svg{
+    width: 50%;
+    height: 50%;
+    fill: #444444;
+    color: #444444;
+    stroke: #fff;
+    transition: .2s;
+}
+.question:hover svg{
+    fill: #ffffff;
+    color: #ffffff;
+    stroke: none;
+}
+.question h1{
+    font-family: 'Salsa', sans-serif;
+    font-size: 5vh;
+}
+.question.qt1{
+    background-color: rgb(255, 66, 66);
+}
+.question.qt1.strech,.question.qt2.strech{
+    height: calc(96%);
+}
+.question.qt2{
+    background-color: rgb(66, 66, 255);
+}
+.question.qt3{
+    background-color: rgb(66, 255, 66);
+}
+.question.qt3.strech{
+    width: calc(96% - 5.1vh);
+}
+.question.qt4{
+    background-color: rgb(255, 255, 66);
+}
+
+.admQuestionInfo{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1vh;
+}
+.admQuestionInfo .perguntaContainer{
+    background-color: var(--fourthColor);
+    border: .4vh solid var(--secondColor);
+    padding: 1vh;
+    border-radius: 1vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    box-shadow: -2px 2px 5px rgba(0,0,0,.6);
+    transform: scale(175%,175%) translate(0, 125%);
+    animation: fadePoints 1s ease-in-out forwards;
+}
+.admQuestionInfo .perguntaContainer.anim{animation: textContainerBackToNormal 1s ease-in-out forwards;}
+.admQuestionInfo .respostaContainer.anim{animation: fadePoints 1s ease-in-out forwards;}
+.admQuestionInfo .perguntaContainer h1{
+    font-family: 'Salsa', sans-serif;
+    font-size: 5vh;
+    color: var(--almostPrimaryColor);
+}
+.admQuestionInfo .perguntaContainer p{
+    font-family: 'kanit', sans-serif;
+    font-size: 2.5vh;
+}
+.admQuestionInfo .respostaContainer {
+    opacity: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1vh;
+}
+.admQuestionInfo .respostaContainer .question{
+    height: 30vh;
+    box-shadow: -2px 2px 5px rgba(0,0,0,.6);
+    transition: .2s;
+}
+.admQuestionInfo .respostaContainer .question span{
+    position: absolute;
+    font-family: 'kanit', sans-serif;
+}
+.admQuestionInfo .respostaContainer .qt1.strech.question,.admQuestionInfo .respostaContainer .qt2.strech.question{
+    height: 50vh;
+}
+
+@keyframes textContainerBackToNormal {
+    0%{
+        transform: scale(175%,175%) translate(0, 125%);
+    }
+    100%{
+        transform: scale(100%,100%) translate(0, 0);
+    }
+}
+
+@media (max-width: 900px) {
+    .admQuestionInfo .perguntaContainer{
+        width: 50%;
+    }
+}
+@media (min-width: 901px) {
+    .admQuestionInfo .perguntaContainer{
+        width: 100vh;
+    }
+}
+@media (max-width: 731px){
+    .admQuestionInfo .respostaContainer .question{
+        font-size: 3.5vh;
+    }
+}
+@media (max-width: 730px) and (min-width: 451px) {
+    .admQuestionInfo .respostaContainer .question{
+        font-size: 5vh;
+    }
+}
+@media (min-width: 731px) {
+    .admQuestionInfo .respostaContainer .question{
+        font-size: 7.5vh;
+    }
+}
+.finalResult{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.finalResult p{
+    font-size: 2.5vh;
+    position: relative;
+    top: 1vh;
+    left: 1vh;
+    font-family: 'kanit', sans-serif;
+}
+
+.actualRankingContainer{
+    position: relative;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    padding: 1vh;
+    width: 40vh;
+    background-color: var(--secondColor);
+    border-radius: 1vh;
+    border: .4vh solid var(--thirdColor);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1vh;
+}
+.actualRankingContainer h1{
+    font-family: 'Salsa', sans-serif;
+    font-size: 5vh;
+    color: #a0a0a0;
+    text-shadow: -2px 2px 2px rgba(0,0,0,.4);
+}
+.pointsContainer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1vh;
+}
+.pointsRow{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 1vh;
+    animation: fadePoints .5s forwards ease-in-out;
+    opacity: 0;
+}
+.pointsRow .name{
+    text-align: center;
+    width: 49%;
+}
+.pointsRow .pos,.pointsRow .points{
+    width: 24%;
+}
+.pointsRow .pos,.pointsRow .name,.pointsRow .points{
+    border: .4vh solid #fff;
+    border-radius: .5vh;
+    background-color: var(--primaryColor);
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Kanit', sans-serif;
+    font-size: 2.5vh;
+    color: #000;
+}
+
+@keyframes fadePoints {
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+}
+
+.roomInfo{
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%);
+    padding: .7vh;
+    border: .4vh solid var(--fifthColor);
+    border-bottom-left-radius: 1vh;
+    border-bottom-right-radius: 1vh;
+    background-color: var(--secondColor);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1vh;
+    border-top: none;
+}
+.roomInfo .txt{
+    text-align: center;
+}
+.roomInfo img{
+    width: 10vh;
+    border-radius: 1vh;
+    border: .4vh solid var(--thirdColor);
+}
+.roomInfo h1{
+    font-size: 2.5vh;
+    font-family: 'Kanit', sans-serif;
+    color: #000;
+}
+h1.code{
+    font-family: 'Kanit', sans-serif;
+    font-size: 3.5vh;
+    color: #a0a0a0;
+    text-align: center;
+    text-shadow: -2px 2px 2px rgba(0,0,0,.4);
+}
+/*fim Multi Player Game*/
